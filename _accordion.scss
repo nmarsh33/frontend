@@ -1,0 +1,127 @@
+$orange: #f5431b;
+$blue: #3cb8ef;
+$laptop: 960px;
+
+.accordion {
+    padding: 1rem 0 1rem 0;
+
+    &:last-of-type {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .accordion-text {
+        text-align: left;
+        font-size: .7em;
+        padding-right: 1rem;
+    }
+
+    &__trigger {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+        cursor: pointer;
+        font-size: 1.25em;
+        background: none;
+        border: none;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font-size: 1.5em;
+        font-weight: 600;
+        padding-left: 0;
+
+        .svg-icon {
+            width: .8em;
+            height: .8em;
+            min-width: .8em;
+        }
+
+        path {
+            stroke: $blue;
+        }
+
+        #horizontal {
+            transition-duration: .25s;
+            transform-origin: center;
+        }
+
+        &.active {
+            #horizontal {
+                transform: rotate(90deg);
+            }
+
+        }
+
+    }
+
+    &__content {
+        display: none;
+
+        .btn {
+            margin-top: 2rem;
+        }
+
+        .spacer {
+            margin-top: 1rem;
+        }
+
+    }
+
+    @media (min-width:$laptop) {
+        padding: 1.5rem 0 1.5rem 0;
+
+        .accordion-text {
+            font-size: .95em;
+        }
+
+    }
+
+}
+
+.accordion-border {
+    h2 {
+        font-weight: 100;
+        margin-bottom: .5em;
+    }
+
+    .svg-icon--plus {
+        min-width: .6em;
+        min-height: .6em;
+        max-width: .6em;
+        max-height: .6em;
+
+        path {
+            stroke: $orange;
+        }
+
+    }
+
+    .accordion {
+        border: 1px solid #e6e6e6;
+        border-top: 0;
+        padding: 1em;
+
+        &:first-child {
+            border-top: 1px solid #e6e6e6;
+        }
+
+    }
+
+    .accordion__trigger {
+        font-size: 1.3em;
+    }
+
+    @media (min-width:$laptop) {
+        .accordion {
+            padding: 1.5em 2.5em;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+    }
+
+}
